@@ -1,0 +1,45 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+.clock h1 {
+    font-size: 60px;
+}
+.hidden {
+    display: none;
+}
+
+.youtube-area {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#player {
+    width: 400px;
+    height: 280px;
+}
