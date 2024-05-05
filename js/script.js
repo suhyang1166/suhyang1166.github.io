@@ -31,7 +31,7 @@ if (savedUserName === null) {
 }
 
 // --------- 현재시간 관련 함수 ---------
-const dayNow = document.querySelector(".clock h3");
+const dayNow = document.querySelector(".clock p");
 const clockNow = document.querySelector(".clock h1");
 
 const days = ["일", "월", "화", "수", "목", "금", "토"];
@@ -110,9 +110,26 @@ const bgImg = document.querySelector(".wrap");
 bgImg.style.backgroundImage = `url(./img/${chosenImg})`;
 
 // --------- weather api ---------
+const API_KEY = "df4650871358241dcd5c63e54e443ab8";
+
 const onGeoOk = (position) => {
     const lat = position.coords.latitude;
-    console.log(position);
+    const lng = position.coords.longitude;
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+    console.log(url);
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+            const city = document.querySelector(".weather h4");
+            const temp = document.querySelector(".temp");
+            const weather = document.querySelector(".weather-main");
+            console.log(temp);
+            console.log(data);
+            city.innerText = data.name;
+            temp.innerText = data.main.temp.toFixed(1);
+            weather.innerText = data.weather[0].main;
+        });
 };
 const onGeoErr = () => {
     alert("데이터를 불러올 수 없습니다.");
