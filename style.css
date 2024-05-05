@@ -18,11 +18,10 @@ a {
 /* common */
 .wrap {
     width: 100%;
-    height: 100%;
-    max-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,7 +44,7 @@ input:focus {
 /* left */
 .main-contents {
     width: 50%;
-    height: 650px;
+    height: 680px;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -53,7 +52,7 @@ input:focus {
     align-items: center;
     gap: 20px;
     color: #fff;
-    padding: 20px 0;
+    padding: 30px 0;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     transition: all 0.3s;
@@ -137,7 +136,7 @@ input:focus {
 /* right */
 .todo {
     width: 50%;
-    height: 650px;
+    height: 680px;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -189,7 +188,7 @@ input:focus {
     color: #fff;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 900px) {
     input {
         width: 300px;
         height: 30px;
@@ -208,11 +207,15 @@ input:focus {
         display: flex;
     }
     .user input {
-        width: 250px;
+        width: 240px;
     }
     .user button {
-        width: 50px;
+        width: 40px;
         height: 30px;
+        font-size: 12px;
+    }
+    .weather {
+        width: 300px;
     }
     #player {
         width: 300px;
