@@ -3,16 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- 파비콘 -->
         <link rel="shortcut icon" href="./img/00.jpg" type="image/x-icon" />
+        <!-- custom css & js -->
         <link rel="stylesheet" href="./style.css" />
-        <script src="./youtube.js"></script>
-        <script type="module" src="./script.js"></script>
+        <script defer type="module" src="./js/script.js"></script>
+        <script src="./js/youtube.js"></script>
+        <script defer src="./js/todo.js"></script>
         <title>My ToDoList</title>
     </head>
     <body>
         <article class="wrap">
             <div class="main-contents">
                 <div class="clock">
+                    <h3></h3>
                     <h1></h1>
                 </div>
                 <div class="user">
@@ -31,6 +35,16 @@
                 <div class="quote">
                     <span></span>
                     <span></span>
+                </div>
+                <div class="todo">
+                    <form class="todo-form">
+                        <input
+                            type="text"
+                            placeholder="할 일을 적어주세요."
+                            required
+                        />
+                    </form>
+                    <ul class="todo-list"></ul>
                 </div>
             </div>
             <div class="youtube-area">

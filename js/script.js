@@ -31,13 +31,23 @@ if (savedUserName === null) {
 }
 
 // --------- 현재시간 관련 함수 ---------
+const dayNow = document.querySelector(".clock h3");
 const clockNow = document.querySelector(".clock h1");
+
+const days = ["일", "월", "화", "수", "목", "금", "토"];
 
 const getTime = () => {
     const date = new Date();
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const week = `${days[date.getDay()]}요일`;
+
     const hours = String(date.getHours()).padStart(2, "0");
     const min = String(date.getMinutes()).padStart(2, "0");
     const sec = String(date.getSeconds()).padStart(2, "0");
+    dayNow.innerText = `${year} ${month} ${day} ${week}`;
     clockNow.innerText = `${hours}:${min}:${sec}`;
 };
 
@@ -98,3 +108,14 @@ const chosenImg = imgs[Math.floor(Math.random() * imgs.length)];
 
 const bgImg = document.querySelector(".wrap");
 bgImg.style.backgroundImage = `url(./img/${chosenImg})`;
+
+// --------- weather api ---------
+const onGeoOk = (position) => {
+    const lat = position.coords.latitude;
+    console.log(position);
+};
+const onGeoErr = () => {
+    alert("데이터를 불러올 수 없습니다.");
+};
+
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoErr);
